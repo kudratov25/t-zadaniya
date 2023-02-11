@@ -1,48 +1,35 @@
 <?php
 class car
 {
+
     public $name;
-    public $price;
-    public function __construct($name, $price)
+    public $year;
+
+    protected $km;
+    private $ownerName;
+    public function __construct($name, $year, $km, $ownerName)
     {
         $this->name = $name;
-        $this->price = $price;
+        $this->year = $year;
+        $this->km = $km;
+        $this->ownerName = $ownerName;
     }
-    public function price()
+    public function getKm()
     {
-        return 'price';
+        return $this->km;
     }
-    public function setName($name)
+
+    public function getOwnerName($ownerName)
     {
-        $this->name = $name;
+        return $this->ownerName;
     }
 }
 
-// $setName = new car('bmw', '1230');
-// echo $setName->name;
-
-// $setName->setName('bmw');
-// echo $setName->name;
-
-
-// $carPrice = new car();
-// $carPrice->price = '400';
-// $carName = new car();
-// $carName->name = 'gentra';
-// // echo $carPrice->price();
-// echo $carName->name;
-// echo '<br>';
-// echo $carPrice->price;
-
-// $bmw = new car();
-// $gm = new car();
-// $gm->name='gentra';
-// $bmw ->name = 'gelick';
-// echo $bmw->name;
-// echo "\n";
-// echo $gm->name;
-// var_dump($gm);
-
+$tesla = new car('audi', '2019', '3000', 'usmon');
+// $tesla->km = 12;
+echo $tesla->getKm();
+echo '<br>';
+echo $tesla->getOwnerName('usmon');
 
 class electroCar extends car
 {
@@ -59,6 +46,6 @@ class electroCar extends car
         return $this->name;
     }
 }
-$car = new electroCar('tesla', '123 dollar');
-$car->hours = 123;
-var_dump($car->setName('tesla'));
+// $car = new electroCar('tesla', '123 dollar');
+// $car->hours = 123;
+// var_dump($car->setName('tesla'));
