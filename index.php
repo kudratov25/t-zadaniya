@@ -18,8 +18,8 @@ class car
     }
 }
 
-$setName = new car('bmw', '1230');
-echo $setName->name;
+// $setName = new car('bmw', '1230');
+// echo $setName->name;
 
 // $setName->setName('bmw');
 // echo $setName->name;
@@ -42,3 +42,23 @@ echo $setName->name;
 // echo "\n";
 // echo $gm->name;
 // var_dump($gm);
+
+
+class electroCar extends car
+{
+
+    public $battary;
+    public $hours;
+    public $name;
+    public function chargingHours($hours)
+    {
+        return $hours;
+    }
+    public function setName($name)
+    {
+        return $this->name;
+    }
+}
+$car = new electroCar('tesla', '123 dollar');
+$car->hours = 123;
+var_dump($car->setName('tesla'));

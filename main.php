@@ -27,9 +27,13 @@ class summary
     // }
 }
 
-$calculate = new summary('123', '123');
-echo $calculate->calculate('123', '123');
+// $calculate = new summary('123', '123');
+// echo $calculate->calculate('123', '123');
+
+
 // $calculate->calculate('123', '123');
 // $setCalculate = $calculate->calculate('summary');
 // echo $calculate->summary;
 // echo 'this is summary';
+
+
