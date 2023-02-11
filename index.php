@@ -19,17 +19,12 @@ class car
         return $this->km;
     }
 
-    public function getOwnerName($ownerName)
+    public function getOwnerName()
     {
         return $this->ownerName;
     }
 }
 
-$tesla = new car('audi', '2019', '3000', 'usmon');
-// $tesla->km = 12;
-echo $tesla->getKm();
-echo '<br>';
-echo $tesla->getOwnerName('usmon');
 
 class electroCar extends car
 {
@@ -45,7 +40,19 @@ class electroCar extends car
     {
         return $this->name;
     }
+    // you can display data with public method in child class
+    public function getKm()
+    {
+        return $this->km;
+    }
+
+    // you can not display data in child class with any way
+    // public function getOwnerName()
+    // {
+    //     return $this->ownerName;
+    // }
 }
-// $car = new electroCar('tesla', '123 dollar');
-// $car->hours = 123;
-// var_dump($car->setName('tesla'));
+$tesla = new electroCar('tesla', 2019, 3450, 'abdulla');
+echo $tesla->getOwnerName();
+// $tesla = new car('bmw', 2020, 1230, 'john');
+// echo $tesla->getOwnerName('abdulla');
