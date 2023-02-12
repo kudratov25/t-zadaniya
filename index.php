@@ -63,6 +63,6 @@ if ($data == 'generator') {
 if ($data == 'logger') {
     echo $options->logger();
 }
-if ($data) {
+if ($data =='start') {
     echo $options ->start();
 }
