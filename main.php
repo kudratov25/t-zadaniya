@@ -1,39 +1,34 @@
 <?php
-class summary
+
+class Calculate
 {
-    // public $summary;
-    public $number1;
-    public $number2;
-
-
-
-    public function __construct($number1, $number2)
+    public function summary($a, $b)
     {
-        $this->number1 = $number1;
-        $this->number2 = $number2;
+        $summary = $a + $b;
+        echo "summary($a + $b) = $summary";
     }
-    public function calculate($number1, $number2)
+    public function generator($numbers = 10)
     {
-        if (isset($number1, $number2)){
-
-        $summary = $number1 + $number2;
-        return $summary;
+        $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+        return substr(str_shuffle($data), 0, $numbers);
     }
-
-    }
-    // public function calculate($summary)
-    // {
-    //     $this->summary = $summary;
-    // }
 }
-
-// $calculate = new summary('123', '123');
-// echo $calculate->calculate('123', '123');
-
-
-// $calculate->calculate('123', '123');
-// $setCalculate = $calculate->calculate('summary');
-// echo $calculate->summary;
-// echo 'this is summary';
-
-
+$data = $argv[1];
+$options = new Calculate();
+if ($data == 'summary') {
+    if (isset($argv[2], $argv[3])) {
+        echo $options->summary($argv[2], $argv[3]);
+    } else {
+        echo 'please input two parametr after keyword summary';
+    }
+}
+if ($data == 'generator') {
+    if (isset($argv[2])) {
+        echo $options->generator($argv[2]);
+    }
+    if (!isset($argv[2])) {
+        echo $options->generator(10);
+    }
+}
+if ($data == 'logger') {
+} 
