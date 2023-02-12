@@ -16,12 +16,13 @@ class Calculate
     }
     public function logger()
     {
-        $this->addlog('logger');
         $file = "log/logger.log";
         $f = fopen($file, "r");
         while ($line = fgets($f, 100)) {
             print $line . "\n";
         }
+        $this->addlog('logger');
+
     }
     public function addlog($log_data)
     {
