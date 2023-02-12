@@ -16,6 +16,7 @@ class Calculate
     }
     public function logger()
     {
+
         $file = "log/logger.log";
         $f = fopen($file, "r");
         while ($line = fgets($f, 100)) {
@@ -23,6 +24,10 @@ class Calculate
         }
         $this->addlog('logger');
 
+    }
+    public function start()
+    {
+        $this->addlog('app started');
     }
     public function addlog($log_data)
     {
@@ -57,4 +62,7 @@ if ($data == 'generator') {
 }
 if ($data == 'logger') {
     echo $options->logger();
+}
+if ($data) {
+    echo $options ->start();
 }
